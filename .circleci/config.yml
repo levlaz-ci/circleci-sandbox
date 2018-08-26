@@ -7,6 +7,8 @@ jobs:
       - checkout
       - run: echo "it works!"
   deploy:
+    docker:
+    - image: circleci/python:3.6.2
     steps:
       - run: echo "deploy"
 
