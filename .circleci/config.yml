@@ -6,3 +6,12 @@ jobs:
     steps:
       - checkout
       - run: echo "it works!"
+  deploy:
+    steps:
+      - run: echo "deploy"
+
+workflow:
+  version: 2
+  jobs:
+    - build
+    - deploy
