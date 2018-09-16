@@ -5,16 +5,4 @@ jobs:
       - image: circleci/python:3.6.2
     steps:
       - checkout
-      - run: echo "it works!"
-  deploy:
-    docker:
-    - image: circleci/python:3.6.2
-    steps:
-      - run: echo "deploy"
-
-workflows:
-  version: 2
-  workflow:
-    jobs:
-      - build
-      - deploy
+      - run: echo $CIRCLE_PULL_REQUEST
