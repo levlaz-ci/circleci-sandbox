@@ -6,4 +6,3 @@ jobs:
     steps:
       - checkout
       - run: echo $CIRCLE_PULL_REQUEST
-      - run: echo 'hi!'
