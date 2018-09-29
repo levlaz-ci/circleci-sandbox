@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  - docker: levlaz/docker-publish@volatile
+  docker: levlaz/docker-publish@volatile
 
 workflows:
   publish:
