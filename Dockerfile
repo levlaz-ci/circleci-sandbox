@@ -1,1 +1,1 @@
-FROM circleci/python:3.6
+FROM python:alpine
