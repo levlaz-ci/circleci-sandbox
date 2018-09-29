@@ -7,7 +7,7 @@ workflows:
     jobs:
       - docker/publish
       - docker/publish
-          image: my/image
+          image: "my/image"
           tag: mytag
       - docker/publish
           registry: quay.io
