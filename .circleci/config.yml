@@ -13,13 +13,15 @@ workflows:
           registry: quay.io
           dockerfile: Dockerfile.other
       - docker/publish:
-          after_checkout:
-              - run: 
-                  name: Do this after checkout
-                  command: echo "did this after checkout"
-              - run: 
-                  name: Do this after checkout
-                  command: echo "did this after checkout"
-              - run: 
-                  name: Do this after checkout
-                  command: echo "did this after checkout"
+            after_checkout:
+                - run:
+                    name: Do this after checkout.
+                    command: echo "Did this after checkout"
+            before_build:
+                - run:
+                    name: Do this before the build.
+                    command: echo "Did this before the build"
+            after_build:
+                - run:
+                    name: Do this after the build.
+                    command: echo "Did this after the build"
