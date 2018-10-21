@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - command: |
-          docker run -v /tmp/mitmproxy:/home/mitmproxy/.mitmproxy --rm -d -p 8080:8080 mitmproxy/mitmproxy mitmdump --flow-detail 3
-          nc -w 15 -z localhost 8080
+      - run:
+          command: |
+            docker run -v /tmp/mitmproxy:/home/mitmproxy/.mitmproxy --rm -d -p 8080:8080 mitmproxy/mitmproxy mitmdump --flow-detail 3
+            nc -w 15 -z localhost 8080
