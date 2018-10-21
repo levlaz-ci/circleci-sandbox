@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6.2
+      - image: circleci/python:3.6
     steps:
       - checkout
-      - run: echo $CIRCLE_PULL_REQUEST
+      - setup_remote_docker
+      - run: docker ps
