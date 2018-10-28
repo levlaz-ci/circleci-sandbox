@@ -10,5 +10,5 @@ jobs:
       - run:
           name: run mitdump
           command: |
-            docker rum -rm -d -p 8080:8080 mitmproxy/mitmproxy mitmdump --flow-detail 3
+            docker run -rm -d -p 8080:8080 mitmproxy/mitmproxy mitmdump --flow-detail 3
             nc -w 15 -z localhost 8080
