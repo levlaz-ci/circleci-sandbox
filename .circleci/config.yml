@@ -2,7 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6.2
+      - image: circleci/python:3.6
     steps:
       - checkout
-      - run: echo $CIRCLE_PULL_REQUEST
+      - setup_remote_docker:
+          version: 18.05.0
+      - run:
+          name: run mitdump
+          command: |
+            docker rum -rm -d -p 8080:8080 mitmproxy/mitmproxy mitmdump --flow-detail 3
+            nc -w 15 -z localhost 8080
