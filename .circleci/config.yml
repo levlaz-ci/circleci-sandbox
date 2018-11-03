@@ -4,17 +4,17 @@ jobs:
     docker:
     - image: norionomura/swift:42
     steps:
-      - checkout
-      - run:
-          name: Swiftlint
-          command: |
-            cd /tmp
-            git clone https://github.com/realm/SwiftLint.git --depth=1
-            cd SwiftLint
-            git checkout 0.27.0
-            swift build -c release --static-swift-stdlib
-            cd -
-            /tmp/SwiftLint/build/x86_64-unknown-linux/release/swiftlint
+    - checkout
+    - run:
+        name: Swiftlint
+        command: |
+          cd /tmp
+          git clone https://github.com/realm/SwiftLint.git --depth=1
+          cd SwiftLint
+          git checkout 0.27.0
+          swift build -c release --static-swift-stdlib
+          cd -
+          /tmp/SwiftLint/build/x86_64-unknown-linux/release/swiftlint
 workflows:
   version: 2
   workflow:
